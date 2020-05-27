@@ -4,7 +4,7 @@
 }
 .settings div{
     display: inline-block;
-    background-color: #e2e2e2;
+    cursor: pointer;
     border: 1px solid #ccc;
     padding: 10px;
     width: 50%;
@@ -12,6 +12,9 @@
     font-size: 18px;
 
 }
-.settings div a{
-    color: #504f4f ;
+
+.active-route{
+    font-weight: bolder;
+    text-decoration: underline;
+    background-color: #e2e2e2;
 }

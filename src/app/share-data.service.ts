@@ -32,7 +32,10 @@ export class ShareDataService {
 
 
   private connections = new BehaviorSubject([]);
-  connections$ = this.connections.asObservable();
+  connections$ = this.connections.asObservable(); // 4
+
+  private pendingConnections = new BehaviorSubject([]);
+  pending$ = this.pendingConnections.asObservable(); // 5
 
   setAuth(authentication: boolean, isAdmin, result: any){
     this.authState.next([authentication, isAdmin]);
@@ -46,6 +49,10 @@ export class ShareDataService {
 
   updateConnections(arr: string[]){
     this.connections.next(arr);
+  }
+
+  updatePendingConnections(arr: string[]){
+    this.pendingConnections.next(arr);
   }
 
 

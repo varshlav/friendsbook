@@ -1,5 +1,5 @@
 <div class="settings">
-    <div><a routerLink="/settings/profile" routerLinkActive="active">Profile Setting</a></div>
-    <div><a routerLink="/settings/password" [queryParams]="{userID: userID}" routerLinkActive="active">Change Password</a></div>
+    <div routerLinkActive="active-route" routerLink="/settings/profile">Profile Setting</div>
+    <div routerLinkActive="active-route" routerLink="/settings/password" [queryParams]="{userID: userID}">Change Password</div>
     <router-outlet></router-outlet>
 </div>

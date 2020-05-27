@@ -11,6 +11,7 @@ export class ProfileSettingComponent implements OnInit {
 
   userId: string = '';
   userDetails: any = {};
+  displayMsg: string;
   constructor(private shareData: ShareDataService, private fetchServ: FetchResponseService) { }
 
   ngOnInit() {
@@ -28,9 +29,11 @@ export class ProfileSettingComponent implements OnInit {
   updateUser(){
     this.fetchServ.updateUserDetails(this.userId, this.userDetails).subscribe(()=>{
       console.log("User's information updated");
+      this.displayMsg = "User's Details have been updated successfully";
     },
     error=>{
       console.log("An error occurred while updating the record. Please re try in some time");
+      this.displayMsg = "Changes could not be saved. Please retry after some time.";
     });
   }
 

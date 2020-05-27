@@ -2,35 +2,37 @@
     <div class="profileSetting" >
         <form #details="ngForm" (ngSubmit)="submitDetails()">
             <div class="col-6">
-                <input class="form-control" type="text" [(ngModel)]="userDetails.firstName" name="firstName">
+                <input class="form-control" type="text" [(ngModel)]="userDetails.firstName" name="firstName" placeholder="First Name">
             </div>
             <div class="col-6">
-                <input class="form-control" type="text" [(ngModel)]="userDetails.lastName" name="lastName">
+                <input class="form-control" type="text" [(ngModel)]="userDetails.lastName" name="lastName" placeholder="Last Name">
             </div>
             <div class="col-6">
-                <input class="form-control" type="text" [(ngModel)]="userDetails.gender" name="gender">
+                <input class="form-control" type="text" [(ngModel)]="userDetails.gender" name="gender" placeholder="Gender">
             </div>
             <div class="col-6">
-                <input class="form-control" type="text" [ngModel]="userDetails.dob | date:'shortDate'" (ngModelChange)="value=$event" name="dob">
+                <input class="form-control" type="text" [ngModel]="userDetails.dob | date:'shortDate'" (ngModelChange)="value=$event" name="dob" placeholder="Date of Birth">
             </div>
             <div class="col-6">
-                <input class="form-control" type="text" [(ngModel)]="userDetails.email" name="email">
+                <input class="form-control" type="text" [(ngModel)]="userDetails.email" name="email" placeholder="Email ID">
             </div>
             <div class="col-6">
-                <input class="form-control" type="text" [(ngModel)]="userDetails.phone" name="phone">
+                <input class="form-control" type="text" [(ngModel)]="userDetails.phone" name="phone" placeholder="Phone no.">
             </div>
             <div class="col-6">
-                <input class="form-control"type="text" [(ngModel)]="userDetails.country" name="country">
+                <input class="form-control"type="text" [(ngModel)]="userDetails.country" name="country" placeholder="Country">
             </div>
             <div class="col-6">
-                <input class="form-control" type="text" [(ngModel)]="userDetails.state" name="state">
+                <input class="form-control" type="text" [(ngModel)]="userDetails.state" name="state" placeholder="State">
             </div>
            
 
             <div class="col-6">
-                <button class="btn btn-primary" type="submit">SAVE</button>
+                <button class="btn btn-primary" type="submit" [disabled]="details.pristine">SAVE</button>
             </div>
         </form>
-    
+    </div>
+    <div class="alert alert-info" *ngIf="displayMsg">
+            {{displayMsg}}
     </div>
 </div>

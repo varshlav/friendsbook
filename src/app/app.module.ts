@@ -21,6 +21,7 @@ import { FetchResponseService } from './fetch-response.service';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { FetchUserNamePipe } from './fetch-user-name.pipe';
 import { ProfileSettingComponent } from './profile-setting/profile-setting.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -41,7 +42,8 @@ import { ProfileSettingComponent } from './profile-setting/profile-setting.compo
     ProfilePageComponent,
     HeaderComponent,
     FetchUserNamePipe,
-    ProfileSettingComponent
+    ProfileSettingComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
