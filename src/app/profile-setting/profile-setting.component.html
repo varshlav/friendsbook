@@ -11,7 +11,7 @@
                 <input class="form-control" type="text" [(ngModel)]="userDetails.gender" name="gender" placeholder="Gender">
             </div>
             <div class="col-6">
-                <input class="form-control" type="text" [ngModel]="userDetails.dob | date:'shortDate'" (ngModelChange)="value=$event" name="dob" placeholder="Date of Birth">
+                <input class="form-control" type="text" [ngModel]="userDetails.dob | date:'shortDate'" (ngModelChange)="userDetails.dob=$event" name="dob" placeholder="Date of Birth">
             </div>
             <div class="col-6">
                 <input class="form-control" type="text" [(ngModel)]="userDetails.email" name="email" placeholder="Email ID">
