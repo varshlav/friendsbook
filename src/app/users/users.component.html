@@ -1,1 +1,8 @@
-<p>users works!</p>
+<div class="container">
+    <app-profile-page></app-profile-page>
+    <div class="user-container">
+        <div *ngFor="let user of users" class="user">
+            {{user.firstName}}  {{user.lastName}}
+        </div>
+    </div>
+</div>

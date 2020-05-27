@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShareDataService } from '../share-data.service';
 
 @Component({
   selector: 'app-freinds',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FreindsComponent implements OnInit {
 
-  constructor() { }
+  friends: string[] = [];
+  constructor(private shareServ: ShareDataService) { }
 
   ngOnInit() {
+    this.shareServ.connections$.subscribe(friendlist => {
+      this.friends = friendlist;
+    });
   }
 
 }

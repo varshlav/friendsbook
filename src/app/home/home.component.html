@@ -1,1 +1,17 @@
-<p>home works!</p>
+    <div class="container">
+        <app-profile-page></app-profile-page>
+        <div class="posts">
+            <div class="postUpdates">
+                <input type="text" class="form-control" placeholder="Write new post/upload pic" [(ngModel)]="toBePosted">
+                <button class="btn btn-primary" type="button" (click)="postUpdate()">Post</button>
+            </div>
+            <div class="post-container">
+                <div *ngFor="let post of posts">
+                    ** {{post.post}} created by {{post.userName}}
+                    <br>
+                    {{post.createdDate | date:'medium'}}
+                 </div>
+            </div>
+            
+        </div>
+    </div>

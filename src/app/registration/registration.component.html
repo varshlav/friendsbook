@@ -1,1 +1,50 @@
-<p>registration works!</p>
+<div class="loginContainer">
+    <div class="loginHeader">
+        Registration
+    </div>
+
+    <form (ngSubmit)="f.form.valid && onSubmit(f)" #f="ngForm" class="loginBody">
+        
+        
+
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" id="name" ngModel name="firstName" placeholder="First Name" required #firstName="ngModel">
+            <div class="alert alert-danger" *ngIf="firstName.errors && (firstName.dirty || firstName.touched || f.submitted)">
+               <p *ngIf="firstName.errors.required"> firstName is required </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" id="lastName" ngModel name="lastName" placeholder="Last Name" required #lastName="ngModel">
+            <div class="alert alert-danger" *ngIf="lastName.errors && (lastName.dirty || lastName.touched || f.submitted)">
+               <p *ngIf="lastName.errors.required"> Last name is required </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Email :</label>
+            <input class="form-control" type="email" id="email" ngModel name="email" placeholder="Email" required email #email="ngModel">
+            <div class="alert alert-danger" *ngIf="email.errors && (email.dirty || email.touched || f.submitted)">
+                <p *ngIf="email.errors.required"> Email is required </p>
+                <p *ngIf="email.errors.email"> Email is not valid </p>
+             </div>
+        </div>
+
+        <div class="form-group">
+            <label>Password</label>
+            <input class="form-control" type="password" id="password" ngModel name="password" placeholder="Password" required #password="ngModel">
+            <div class="alert alert-danger" *ngIf="password.errors && (password.dirty || password.touched || f.submitted)">
+                <p *ngIf="password.errors.required"> password is required </p>
+             </div>
+        </div>
+
+
+        <div class="loginFooter">
+            <button routerLink="/login" type="button" class="btn btn-primary" >Login</button> 
+            <button type="submit" class="btn btn-primary">Register</button> 
+        </div>
+        
+    </form>
+</div>

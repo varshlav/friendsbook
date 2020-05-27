@@ -1,1 +1,21 @@
-<p>forgot works!</p>
+<div class="loginContainer">
+    
+        <div class="loginHeader">
+            Forgot Password
+        </div>
+        <form class="loginBody">
+            <div  class="form-group">
+                <input type="email" class="form-control" placeholder="Email" [(ngModel)]="emailEntered" name="emailEntered" (mouseenter)="enterEmail()">
+                
+                <br>
+                <input type="date" class="form-control" placeholder="DOB" name="DOB">
+            </div>
+            <div class="mb-2">
+                <button type="button" class="btn btn-primary" (click)="verifyEmail()">GO !</button>
+            </div>
+            <div *ngIf="alertMessage" class="alert alert-danger" role="alert">
+                {{alertMessage}}
+            </div>
+        </form>
+    
+</div>

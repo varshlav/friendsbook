@@ -1,0 +1,36 @@
+<div class="">
+    <div class="profileSetting" >
+        <form #details="ngForm" (ngSubmit)="submitDetails()">
+            <div class="col-6">
+                <input class="form-control" type="text" [(ngModel)]="userDetails.firstName" name="firstName">
+            </div>
+            <div class="col-6">
+                <input class="form-control" type="text" [(ngModel)]="userDetails.lastName" name="lastName">
+            </div>
+            <div class="col-6">
+                <input class="form-control" type="text" [(ngModel)]="userDetails.gender" name="gender">
+            </div>
+            <div class="col-6">
+                <input class="form-control" type="text" [ngModel]="userDetails.dob | date:'shortDate'" (ngModelChange)="value=$event" name="dob">
+            </div>
+            <div class="col-6">
+                <input class="form-control" type="text" [(ngModel)]="userDetails.email" name="email">
+            </div>
+            <div class="col-6">
+                <input class="form-control" type="text" [(ngModel)]="userDetails.phone" name="phone">
+            </div>
+            <div class="col-6">
+                <input class="form-control"type="text" [(ngModel)]="userDetails.country" name="country">
+            </div>
+            <div class="col-6">
+                <input class="form-control" type="text" [(ngModel)]="userDetails.state" name="state">
+            </div>
+           
+
+            <div class="col-6">
+                <button class="btn btn-primary" type="submit">SAVE</button>
+            </div>
+        </form>
+    
+    </div>
+</div>

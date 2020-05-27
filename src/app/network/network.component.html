@@ -1,1 +1,9 @@
-<p>network works!</p>
+<div class="container">
+    <app-profile-page></app-profile-page>
+    <div class="request">
+        <div *ngFor="let friend of pendingRequest" class="pending-friend">
+            <img src='../assets/profile-blank.png'>  {{friend | fetchUserName | async}}  
+            <button class="pull-right btn btn-primary requestButton"><i>Request Pending</i></button>
+        </div> 
+    </div>
+</div>

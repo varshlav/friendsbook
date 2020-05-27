@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FetchResponseService } from '../fetch-response.service';
 
 @Component({
   selector: 'app-users',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
-
-  constructor() { }
+  users: any;
+  constructor(private fetchServ: FetchResponseService) { }
 
   ngOnInit() {
+    
+    this.fetchServ.fetchAllUsers().subscribe(response => {
+      this.users = response;
+    });
   }
 
 }
