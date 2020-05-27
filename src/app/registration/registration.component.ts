@@ -8,7 +8,7 @@ import { NgForm} from '@angular/forms'
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent implements OnInit {
-
+  displayMessage: string;
   constructor(private fetchService: FetchResponseService) { }
 
   ngOnInit() {
@@ -16,12 +16,12 @@ export class RegistrationComponent implements OnInit {
  
   onSubmit(form: NgForm){
     this.fetchService.registerUser(form.value).subscribe((data:any[])=>{
-      alert("User successfully created... Use your email and password to login");
+      this.displayMessage = "User successfully created... Use your email ID and password to login";
+      form.reset();
     },
     error => {
-      alert("Error encountered on registering user... Please give a retry");
+      this.displayMessage = "Error encountered on registering user..."+ error.message +"Please give a retry";
     });
-    
-    
+      
   }
 }

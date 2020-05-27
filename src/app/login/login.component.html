@@ -11,10 +11,10 @@
 
         <div class="form-group">
            
-            <input class="form-control" type="email" id="email" ngModel name="email" placeholder="Email" required email #email="ngModel">
+            <input class="form-control" type="email" id="email" ngModel name="email" placeholder="Email" required email #email="ngModel" (click)="retryLogin()">
             <div class="alert alert-danger" *ngIf="email.errors && (email.dirty || email.touched || f.submitted)">
-                <p *ngIf="email.errors.required"> Email ID is Required </p>
-                <p *ngIf="email.errors.email"> Email is not valid </p>
+                <div *ngIf="email.errors.required"> Email ID is Required </div>
+                <div *ngIf="email.errors.email"> Email is not valid </div>
              </div>
         </div>
 
@@ -22,9 +22,9 @@
       
         <div class="form-group">
             
-            <input class="form-control" type="password" id="password" ngModel name="password" placeholder="Password" required #password="ngModel">
+            <input class="form-control" type="password" id="password" ngModel name="password" placeholder="Password" required #password="ngModel" (click)="retryLogin()">
             <div class="alert alert-danger" *ngIf="password.errors && (password.dirty || password.touched || f.submitted)">
-                <p *ngIf="password.errors.required"> Password is Required </p>
+                <div *ngIf="password.errors.required"> Password is Required </div>
              </div>
         </div>
 
@@ -34,4 +34,7 @@
         </div>
         
     </form>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        {{errorMessage}}
+    </div>
 </div>

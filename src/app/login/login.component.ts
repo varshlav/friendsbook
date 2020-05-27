@@ -11,6 +11,7 @@ import { ShareDataService } from '../share-data.service';
 })
 export class LoginComponent implements OnInit {
 
+  errorMessage: string;
   constructor(private fetchService: FetchResponseService, private router: Router, private shareService: ShareDataService) { }
 
   @Output() authentication = new EventEmitter<boolean>();
@@ -32,11 +33,16 @@ export class LoginComponent implements OnInit {
 
       } else {
         this.shareService.setAuth(false, false, {});
+        this.errorMessage = "Login failed. Please retry!!!"
       }
     },
     err =>{
-      console.log("Incorrect username or password")
+      this.errorMessage = "Incorrect username or password";
     });
     
+  }
+
+  retryLogin(){
+    this.errorMessage = '';
   }
 }

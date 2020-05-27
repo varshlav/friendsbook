@@ -1,20 +1,33 @@
 .settings{
     width: 50%;
     margin:20px auto;
+    border: 1px solid #ccc;
+    background-color: white;    
 }
-.settings div{
+.settings > div{
     display: inline-block;
     cursor: pointer;
-    border: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
     padding: 10px;
     width: 50%;
     text-align: center;
     font-size: 18px;
+    background-color: #eee;
 
 }
+.settings > div:first-child{
+    border-right: 1px solid #ccc;
+}
+
+.settings > div:focus{
+    outline: -webkit-focus-ring-color auto 0;
+}
+
+
 
 .active-route{
     font-weight: bolder;
     text-decoration: underline;
-    background-color: #e2e2e2;
+    background-color: white !important;;
+    border-bottom: 0 !important;
 }

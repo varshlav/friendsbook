@@ -27,7 +27,6 @@ export class ForgotComponent implements OnInit {
   }
 
   enterEmail(){
-   
     this.alertMessage = "";
   }
 
