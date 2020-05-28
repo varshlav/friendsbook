@@ -2,7 +2,7 @@
     <app-profile-page></app-profile-page>
     <div class="friends">
         <div *ngFor="let friend of friends" class="pending-friend">
-           <img src='../assets/profile-blank.png'> {{friend | fetchUserName | async}} 
+           <img src='assets/profile-blank.png'> {{friend | fetchUserName | async}} 
         </div>
     
     </div>
